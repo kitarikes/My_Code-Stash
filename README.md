@@ -25,8 +25,10 @@ https://teihenyoutuber.com のサイトにあるyoutuber情報をスクレイピ
 
 youtuberのチャンネルのリストからseleniumを使って自動で巡回しスクレイピングします。
 
-### [6. 画像水増し用スクリプト](./augmentation.py)
+### [6. 画像水増し用スクリプト](./aug/augmentation.py)
 
-albumentationsを利用して、学習用データを水増しします。
+albumentationsを利用して、学習用データを最大11倍まで水増しすることができるスクリプトです。
+
+annotationファイルの複製は[こちら](./aug/aug_anno.py)
 
 ### Coming Soon ...

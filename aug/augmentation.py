@@ -1,6 +1,4 @@
-# 環境: google colaboratory
-
-
+import numpy as np
 import random
 import os
 import cv2
@@ -11,7 +9,7 @@ import albumentations as A
 # tmp = os.getcwd()
 # os.chdir(os.path.dirname(os.path.abspath(__file__)))
 # img_dir = "../batawa_pic/batawa_300x400"
-
+img_dir = 'datav1'
 
 """
 命名めちゃくちゃでごめなさい；；
@@ -125,7 +123,7 @@ class Batawa_img ():
 
     return tmp
 
-    def to_grey(self):
+  def to_grey(self):
     transform = A.Compose(
     [A.ToGray(p=1)],
     )
@@ -170,7 +168,7 @@ class Batawa_img ():
 
 
 files = os.listdir(img_dir)
-aug_dir = "/content/drive/My Drive/batawa_img/batawa_aug"
+aug_dir = "aug_imgsv1"
 
 def img_save(img, path, name, ctgr):
   tmp = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
@@ -180,10 +178,10 @@ for i in range(len(files)):
   filename = f"{img_dir}/{files[i]}"
   org_image = Batawa_img(filename)
 
-  img_save(org_image.to_grey(), aug_dir, name=files[i], ctgr="grey")
-  img_save(org_image.cha_drop(), aug_dir, name=files[i], ctgr="chadrop")
-  img_save(org_image.cha_shufful(), aug_dir, name=files[i], ctgr="chashuffle")
-  img_save(org_image.invert_img(), aug_dir, name=files[i], ctgr="invert")
+  #img_save(org_image.to_grey(), aug_dir, name=files[i], ctgr="grey")
+  #img_save(org_image.cha_drop(), aug_dir, name=files[i], ctgr="chadrop")
+  #img_save(org_image.cha_shufful(), aug_dir, name=files[i], ctgr="chashuffle")
+  #img_save(org_image.invert_img(), aug_dir, name=files[i], ctgr="invert")
   img_save(org_image.to_compression(), aug_dir, name=files[i], ctgr="compre")
   img_save(org_image.toCLAHE(), aug_dir, name=files[i], ctgr="clahe")
   img_save(org_image.trans_rain(), aug_dir, name=files[i], ctgr="rain")
@@ -192,9 +190,8 @@ for i in range(len(files)):
   img_save(org_image.add_blur(), aug_dir, name=files[i], ctgr="blur")
   img_save(org_image.add_noise(), aug_dir, name=files[i], ctgr="noise")
 
+# files = os.listdir(aug_dir)
 
-files = os.listdir(aug_dir)
+# len(files)
 
-len(files)
-
-# >> 660
+# # >> 660
