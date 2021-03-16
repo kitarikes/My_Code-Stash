@@ -31,4 +31,8 @@ albumentationsを利用して、学習用データを最大11倍まで水増し�
 
 annotationファイルの複製は[こちら](./aug/aug_anno.py)
 
+### [7. google画像スクレイピングライブラリ](./image_downloader.ipynb)
+
+google検索で出てくる画像を100枚保存してくれます。
+
 ### Coming Soon ...
