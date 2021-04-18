@@ -15,4 +15,24 @@ junk(?) code box
 
 ![image](https://user-images.githubusercontent.com/52794486/110541034-8c94a380-816a-11eb-9fff-4f0c7a208b9d.png)
 
+### [4. webスクレイピング(サンプル)](./scrape-selenium/sample-scrape.py)
+
+https://teihenyoutuber.com のサイトにあるyoutuber情報をスクレイピングし、csvで出力するコードです。
+
+このサイトには800以上ものyoutuberが登録されていましたが、管理人は自力で入力・反映させたのでしょうか...
+
+### [5. 自動ブラウザ巡回](./scrape-selenium/selenium-sample.py)
+
+youtuberのチャンネルのリストからseleniumを使って自動で巡回しスクレイピングします。
+
+### [6. 画像水増し用スクリプト](./aug/augmentation.py)
+
+albumentationsを利用して、学習用データを最大11倍まで水増しすることができるスクリプトです。
+
+annotationファイルの複製は[こちら](./aug/aug_anno.py)
+
+### [7. google画像スクレイピングライブラリ](./image_downloader.ipynb)
+
+google検索で出てくる画像を100枚保存してくれます。
+
 ### Coming Soon ...
