@@ -9,7 +9,11 @@ import albumentations as A
 # tmp = os.getcwd()
 # os.chdir(os.path.dirname(os.path.abspath(__file__)))
 # img_dir = "../batawa_pic/batawa_300x400"
-img_dir = 'datav1'
+IMG_DIR = "img_dir"
+NEW_DIR = "new_dir"
+
+
+img_dir = IMG_DIR
 
 """
 命名めちゃくちゃでごめなさい；；
@@ -168,7 +172,7 @@ class Batawa_img ():
 
 
 files = os.listdir(img_dir)
-aug_dir = "aug_imgsv1"
+aug_dir = NEW_DIR
 
 def img_save(img, path, name, ctgr):
   tmp = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
@@ -178,10 +182,10 @@ for i in range(len(files)):
   filename = f"{img_dir}/{files[i]}"
   org_image = Batawa_img(filename)
 
-  #img_save(org_image.to_grey(), aug_dir, name=files[i], ctgr="grey")
-  #img_save(org_image.cha_drop(), aug_dir, name=files[i], ctgr="chadrop")
-  #img_save(org_image.cha_shufful(), aug_dir, name=files[i], ctgr="chashuffle")
-  #img_save(org_image.invert_img(), aug_dir, name=files[i], ctgr="invert")
+  img_save(org_image.to_grey(), aug_dir, name=files[i], ctgr="grey")
+  img_save(org_image.cha_drop(), aug_dir, name=files[i], ctgr="chadrop")
+  img_save(org_image.cha_shufful(), aug_dir, name=files[i], ctgr="chashuffle")
+  img_save(org_image.invert_img(), aug_dir, name=files[i], ctgr="invert")
   img_save(org_image.to_compression(), aug_dir, name=files[i], ctgr="compre")
   img_save(org_image.toCLAHE(), aug_dir, name=files[i], ctgr="clahe")
   img_save(org_image.trans_rain(), aug_dir, name=files[i], ctgr="rain")
